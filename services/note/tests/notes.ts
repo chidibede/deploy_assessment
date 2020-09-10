@@ -26,7 +26,7 @@ Notes.after(async () => {
 
 Notes("Create endpoint works as expected", async () => {
 	await request(App)
-		.post("http:localhost:4000/notes/")
+		.post("/notes")
 		.send({
 			title: "Sample notes",
 			body: "This is a sample description",
@@ -38,6 +38,16 @@ Notes("Create endpoint works as expected", async () => {
 		});
 	const count = await prisma.note.count();
 	assert.is(count, 1);
+});
+
+Notes("Get endpoint works as expected", async () => {
+	await request(App)
+		.get("/notes")
+		.set("Accept", "application/json")
+		.expect("Content-Type", /json/)
+		.then((response) => {
+			assert.instance(response.body, Array);
+		});
 });
 
 Notes.run();

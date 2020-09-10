@@ -1,0 +1,1 @@
+web: yarn service:note start:dev
