@@ -1,0 +1,11 @@
+{
+  "python.formatting.provider": "black",
+  "restructuredtext.confPath": "",
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true
+  },
+  "python.pythonPath": "C:\\Users\\Chidibede\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+}
